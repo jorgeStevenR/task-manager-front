@@ -1,34 +1,39 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { SubtareaService } from '../../../core/services/subtarea.service';
 
 @Component({
   selector: 'app-subtarea',
   standalone: true,
-  imports: [FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './subtarea.html',
 })
 export class Subtarea {
 
   titulo = '';
-  tareaId: any;
-  responsableId: any;
-  buscarId: any;
+  tareaId: number | null = null;
+  responsableId: number | null = null;
+  buscarId: number | null = null;
 
   lista: any[] = [];
 
   constructor(private service: SubtareaService) {}
 
   crear() {
+    if (!this.titulo || !this.tareaId || !this.responsableId) return;
+
     this.service.crear({
       titulo: this.titulo,
-      tareaId: Number(this.tareaId),
-      responsableId: Number(this.responsableId)
+      tareaId: this.tareaId,
+      responsableId: this.responsableId
     }).subscribe();
   }
 
   buscar() {
-    this.service.obtenerPorTarea(Number(this.buscarId))
+    if (!this.buscarId) return;
+
+    this.service.obtenerPorTarea(this.buscarId)
       .subscribe((res: any) => this.lista = res);
   }
 
