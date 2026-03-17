@@ -30,7 +30,9 @@ export class Login {
       next: () => {
         this.mensaje = 'Login exitoso 🔥';
         this.cargando = false;
-        this.router.navigate(['/recordatorios']);
+
+        // 🔥 AHORA VA AL DASHBOARD
+        this.router.navigate(['/dashboard']);
       },
       error: (err) => {
         this.cargando = false;

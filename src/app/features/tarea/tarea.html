@@ -1,0 +1,33 @@
+<div class="card">
+
+  <h2>Crear Tarea 📝</h2>
+
+  <input [(ngModel)]="titulo" placeholder="Título">
+  <input [(ngModel)]="descripcion" placeholder="Descripción">
+  <input [(ngModel)]="prioridad" placeholder="Prioridad (ALTA, MEDIA, BAJA)">
+  
+  <input [(ngModel)]="fechaVencimiento" type="datetime-local">
+
+  <input [(ngModel)]="usuarioCreadorId" placeholder="ID Usuario">
+  <input [(ngModel)]="categoriaId" placeholder="ID Categoría">
+  <input [(ngModel)]="estadoId" placeholder="ID Estado">
+
+  <button (click)="crear()">Crear</button>
+
+</div>
+
+<div class="card">
+
+  <h2>Lista de Tareas</h2>
+
+  <button (click)="cargar()">Actualizar</button>
+
+  <ul>
+    <li *ngFor="let t of lista">
+      {{ t.idTarea }} - {{ t.titulo }} - {{ t.prioridad }}
+
+      <button (click)="eliminar(t.idTarea)">Eliminar</button>
+    </li>
+  </ul>
+
+</div>

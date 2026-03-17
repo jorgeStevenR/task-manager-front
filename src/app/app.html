@@ -1,12 +1,19 @@
 <nav>
+
   <div class="links">
     <a routerLink="/">Login</a>
     <a routerLink="/register">Registro</a>
-    <a routerLink="/recordatorios">Recordatorios</a>
-    <a routerLink="/subtareas">Subtareas</a>
+
+    <ng-container *ngIf="isLogged()">
+      <a routerLink="/dashboard">Inicio</a>
+      <a routerLink="/tareas">Tareas</a>
+      <a routerLink="/recordatorios">Recordatorios</a>
+      <a routerLink="/subtareas">Subtareas</a>
+    </ng-container>
   </div>
 
-  <button (click)="logout()">Salir</button>
+  <button *ngIf="isLogged()" (click)="logout()">Salir</button>
+
 </nav>
 
 <div class="container">

@@ -1,0 +1,23 @@
+<div class="container">
+
+  <div class="card">
+    <h2>Mis Tareas 📝</h2>
+
+    <ul>
+      <li *ngFor="let t of tareas">
+        {{ t.titulo }} ({{ t.prioridad }})
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Recordatorios ⏰</h2>
+
+    <ul>
+      <li *ngFor="let r of recordatorios">
+        {{ r.tipoNotificacion }} - {{ r.fechaRecordatorio }}
+      </li>
+    </ul>
+  </div>
+
+</div>

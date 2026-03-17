@@ -1,22 +1,22 @@
-<div class="card">
-  <h2>Crear Recordatorio 📅</h2>
+  <div class="card">
+    <h2>Crear Recordatorio 📅</h2>
 
-  <input [(ngModel)]="fecha" type="datetime-local">
-  <input [(ngModel)]="tipo" placeholder="Tipo (EMAIL)">
-  <input [(ngModel)]="tareaId" placeholder="ID Tarea">
+    <input [(ngModel)]="fecha" type="datetime-local">
+    <input [(ngModel)]="tipo" placeholder="Tipo (EMAIL)">
+    <input [(ngModel)]="tareaId" placeholder="ID Tarea">
 
-  <button (click)="crear()">Crear</button>
-</div>
+    <button (click)="crear()">Crear</button>
+  </div>
 
-<div class="card">
-  <h2>Recordatorios Pendientes</h2>
+  <div class="card">
+    <h2>Recordatorios Pendientes</h2>
 
-  <button (click)="cargar()">Actualizar</button>
+    <button (click)="cargar()">Actualizar</button>
 
-  <ul>
-    <li *ngFor="let r of lista">
-      📩 {{ r.tipoNotificacion }} <br>
-      🕒 {{ r.fechaRecordatorio }}
-    </li>
-  </ul>
-</div>
+    <ul>
+      <li *ngFor="let r of lista">
+        📩 {{ r.tipoNotificacion }} <br>
+        🕒 {{ r.fechaRecordatorio }}
+      </li>
+    </ul>
+  </div>
