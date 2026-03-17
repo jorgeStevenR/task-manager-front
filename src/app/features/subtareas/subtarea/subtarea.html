@@ -1,0 +1,23 @@
+<div class="card">
+  <h2>Crear Subtarea ✅</h2>
+
+  <input [(ngModel)]="titulo" placeholder="Título">
+  <input [(ngModel)]="tareaId" placeholder="ID Tarea">
+  <input [(ngModel)]="responsableId" placeholder="Responsable">
+
+  <button (click)="crear()">Crear</button>
+</div>
+
+<div class="card">
+  <h2>Buscar Subtareas</h2>
+
+  <input [(ngModel)]="buscarId" placeholder="ID Tarea">
+  <button (click)="buscar()">Buscar</button>
+
+  <ul>
+    <li *ngFor="let s of lista">
+      {{ s.titulo }} - {{ s.completada ? '✔' : '❌' }}
+      <button (click)="completar(s.idSubtarea)">Completar</button>
+    </li>
+  </ul>
+</div>

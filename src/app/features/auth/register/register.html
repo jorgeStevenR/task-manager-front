@@ -1,0 +1,11 @@
+<div class="card">
+  <h2>Registro 🧾</h2>
+
+  <input [(ngModel)]="nombre" placeholder="Nombre">
+  <input [(ngModel)]="email" placeholder="Correo">
+  <input [(ngModel)]="password" type="password" placeholder="Contraseña">
+
+  <button (click)="register()">Crear cuenta</button>
+
+  <p class="mensaje" *ngIf="mensaje">{{ mensaje }}</p>
+</div>

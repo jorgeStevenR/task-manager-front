@@ -1,1 +1,97 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: #e2e8f0;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #020617;
+  padding: 15px 30px;
+  border-bottom: 1px solid #1e293b;
+}
+
+nav .links {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #0ea5e9;
+}
+
+/* BOTONES */
+button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  background: #38bdf8;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #0ea5e9;
+}
+
+/* INPUT */
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin: 8px 0;
+  background: #0f172a;
+  color: white;
+}
+
+/* CONTENEDOR */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* CARD */
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+/* LISTA */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #0f172a;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* MENSAJES */
+.mensaje {
+  margin-top: 10px;
+  font-weight: bold;
+}

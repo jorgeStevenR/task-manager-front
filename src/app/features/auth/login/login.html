@@ -1,0 +1,10 @@
+<div class="card">
+  <h2>Iniciar Sesión </h2>
+
+  <input [(ngModel)]="email" placeholder="Correo">
+  <input [(ngModel)]="password" type="password" placeholder="Contraseña">
+
+  <button (click)="login()">Ingresar</button>
+
+  <p class="mensaje" *ngIf="mensaje">{{ mensaje }}</p>
+</div>
