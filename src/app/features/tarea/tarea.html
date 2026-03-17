@@ -1,33 +1,48 @@
-<div class="card">
+<div class="container">
 
-  <h2>Crear Tarea 📝</h2>
+  <!-- FORM -->
+  <div class="card">
+    <h2>Crear Tarea 📝</h2>
 
-  <input [(ngModel)]="titulo" placeholder="Título">
-  <input [(ngModel)]="descripcion" placeholder="Descripción">
-  <input [(ngModel)]="prioridad" placeholder="Prioridad (ALTA, MEDIA, BAJA)">
-  
-  <input [(ngModel)]="fechaVencimiento" type="datetime-local">
+    <input [(ngModel)]="titulo" placeholder="Título">
 
-  <input [(ngModel)]="usuarioCreadorId" placeholder="ID Usuario">
-  <input [(ngModel)]="categoriaId" placeholder="ID Categoría">
-  <input [(ngModel)]="estadoId" placeholder="ID Estado">
+    <textarea [(ngModel)]="descripcion" placeholder="Descripción"></textarea>
 
-  <button (click)="crear()">Crear</button>
+    <select [(ngModel)]="prioridad">
+      <option value="ALTA">🔴 Alta</option>
+      <option value="MEDIA">🟡 Media</option>
+      <option value="BAJA">🟢 Baja</option>
+    </select>
 
-</div>
+    <!-- 🔥 INPUT CORRECTO -->
+    <input 
+      type="datetime-local" 
+      [(ngModel)]="fechaVencimiento"
+    >
 
-<div class="card">
+    <input type="number" [(ngModel)]="usuarioCreadorId" placeholder="Usuario ID">
+    <input type="number" [(ngModel)]="categoriaId" placeholder="Categoría ID">
+    <input type="number" [(ngModel)]="estadoId" placeholder="Estado ID">
 
-  <h2>Lista de Tareas</h2>
+    <button (click)="crear()">Crear Tarea</button>
+  </div>
 
-  <button (click)="cargar()">Actualizar</button>
+  <!-- LISTA -->
+  <div class="card">
+    <h2>Lista de Tareas 📋</h2>
 
-  <ul>
-    <li *ngFor="let t of lista">
-      {{ t.idTarea }} - {{ t.titulo }} - {{ t.prioridad }}
+    <button (click)="cargar()">Actualizar</button>
+
+    <div class="task" *ngFor="let t of lista">
+      <div>
+        <strong>{{ t.titulo }}</strong>
+        <p>{{ t.descripcion }}</p>
+        <span>{{ t.prioridad }}</span>
+      </div>
 
       <button (click)="eliminar(t.idTarea)">Eliminar</button>
-    </li>
-  </ul>
+    </div>
+
+  </div>
 
 </div>
